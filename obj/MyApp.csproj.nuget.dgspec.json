@@ -1,27 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gbs4e\\desktop\\dev\\zpl\\myApp\\MyApp.csproj": {}
+    "C:\\Users\\dovid\\Desktop\\dev\\ZPL\\MyApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gbs4e\\desktop\\dev\\zpl\\myApp\\MyApp.csproj": {
+    "C:\\Users\\dovid\\Desktop\\dev\\ZPL\\MyApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gbs4e\\desktop\\dev\\zpl\\myApp\\MyApp.csproj",
+        "projectUniqueName": "C:\\Users\\dovid\\Desktop\\dev\\ZPL\\MyApp.csproj",
         "projectName": "MyApp",
-        "projectPath": "C:\\Users\\gbs4e\\desktop\\dev\\zpl\\myApp\\MyApp.csproj",
-        "packagesPath": "C:\\Users\\gbs4e\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gbs4e\\desktop\\dev\\zpl\\myApp\\obj\\",
+        "projectPath": "C:\\Users\\dovid\\Desktop\\dev\\ZPL\\MyApp.csproj",
+        "packagesPath": "C:\\Users\\dovid\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dovid\\Desktop\\dev\\ZPL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\gbs4e\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\dovid\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
@@ -52,7 +49,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
