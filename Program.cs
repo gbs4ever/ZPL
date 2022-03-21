@@ -29,7 +29,8 @@ var zpl = File.ReadAllText(path);
 
 Console.WriteLine("edit filie . Please type any key......");
 var res = WebApplication2.Classes.ZPLHandler.ScaleZPL(zpl, 300);
-var printer_path = "";
+
+var printer_path = "\\DESKTOP-6O8VP28\ZDesigner7";
 System.Threading.Thread.Sleep(2000);
 var fs = new SafeFileHandle((IntPtr)Name.Program.CreateFile(Path.Combine(printer_path, Guid.NewGuid().ToString())), true);
 using (var file = new FileStream(fs, FileAccess.ReadWrite))
@@ -39,15 +40,17 @@ using (var file = new FileStream(fs, FileAccess.ReadWrite))
     file.Close();
 }
 fs.Close();
-fs.Dispose();
+ fs.Dispose();
 
-
+Console.ReadLine();
     
-
-
-
-public int CreateFile(string FileName)
+namespace Name
+{
+ public static class  Program
+{
+    public static int CreateFile(string FileName)
     {
+            Console.WriteLine("loaded");
         return CreateFile(FileName, 0x40000000, 0, 0, 1, 0, 0);
     }
     [DllImport("kernel32.dll", SetLastError = true)]
@@ -61,8 +64,8 @@ public int CreateFile(string FileName)
     uint hTemplateFile
     );
     
- 
-
+ }
+}
 
 namespace WebApplication2.Classes
 {
