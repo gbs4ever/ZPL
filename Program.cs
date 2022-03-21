@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 
 
 var path = @"C:\Users\dovid\Desktop\zq\USPSSHIPPINGLAB.zpl";
+var tpath = @"C:\Users\dovid\Desktop\zq\t.zpl";
 Console.WriteLine(args.Length);
 if (args.Length > 0)
 {
@@ -27,16 +28,22 @@ System.Threading.Thread.Sleep(1000);
 var zpl = File.ReadAllText(path);
 
 
-Console.WriteLine("edit filie . Please type any key......");
-var res = WebApplication2.Classes.ZPLHandler.ScaleZPL(zpl, 300);
+Console.WriteLine("==========Converting zpl file =========");
+var zplstring= WebApplication2.Classes.ZPLHandler.ScaleZPL(zpl, 300);
+zplstring += "P1\n";
+var printer_path = @"\\DESKTOP-6O8VP28\ZDesigner7";
+using (StreamWriter writer = new StreamWriter(tpath))
+{
+    writer.WriteLine(zplstring);
+}
 
-var printer_path = "\\DESKTOP-6O8VP28\ZDesigner7";
+Console.ReadLine();
 System.Threading.Thread.Sleep(2000);
 var fs = new SafeFileHandle((IntPtr)Name.Program.CreateFile(Path.Combine(printer_path, Guid.NewGuid().ToString())), true);
 using (var file = new FileStream(fs, FileAccess.ReadWrite))
 {
     using (var writer = new StreamWriter(file))
-    writer.Write(res);
+    writer.Write(zplstring);
     file.Close();
 }
 fs.Close();
@@ -46,6 +53,9 @@ Console.ReadLine();
     
 namespace Name
 {
+    
+
+
  public static class  Program
 {
     public static int CreateFile(string FileName)
